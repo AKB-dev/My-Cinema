@@ -1,5 +1,5 @@
 <?php
-$dbhost = 'localhost:8889';
+$dbhost = 'localhost';
 $dbname = 'cinema';
 $username = 'root';
 $password = '';

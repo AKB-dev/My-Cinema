@@ -10,8 +10,7 @@
             <nav class="z-depth-0">
                 <div class="container">
                     <ul class="left">
-                        <li><a href="site.php" >HOME</a></li>
-                        <li><a href="movies.php">MOVIES</a></li>
+                        <li><a href="index.php">MOVIES</a></li>
                         <li><a href="members.php">MEMBERS</a></li>
                     </ul>
                 </div>
