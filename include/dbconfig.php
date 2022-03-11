@@ -1,5 +1,5 @@
 <?php
-$dbhost = 'https://cinema-search-project.herokuapp.com/';
+$dbhost = 'localhost:8889';
 $dbname = 'cinema';
 $username = 'root';
 $password = '';
