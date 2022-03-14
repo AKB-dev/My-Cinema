@@ -11,7 +11,7 @@ require ('include/database.php') ?>
             <form action="index.php" method="POST">
                 <div class="row">
                 <div class="">
-                    <input type="text" name="title" class="validate" placeholder="Search By Title, Genre or Distributor"/>
+                    <input type="text" name="search" class="validate" placeholder="Search By Title, Genre or Distributor"/>
                 </div>
                 </div>
                             
@@ -21,9 +21,7 @@ require ('include/database.php') ?>
 
         <?php
             if (isset($_POST['submit'])) {
-                $title = $_POST['title'];
-                $genre = $_POST['genre'];
-                $dist = $_POST['distributor'];
+                $search = $_POST['search'];
             ?>
             <table>
                 <thead>
@@ -35,12 +33,29 @@ require ('include/database.php') ?>
                 </thead>
                 <tbody>
                     <?php 
-                        $query = $db->prepare("SELECT title, genre FROM movie WHERE title LIKE '%$title%' LIMIT 10");
+                        // $requete = <<<END
+                        // SELECT movie.title, genre.name 
+                        // FROM movie 
+                        // INNER JOIN movie_genre 
+                        // ON movie.id = movie_genre.id_movie
+                        // INNER JOIN genre 
+                        // ON movie_genre.id_genre = genre.id
+                        // WHERE movie.title LIKE '%$search%' OR genre.name LIKE '%$search%' LIMIT 10
+                        // END;
+                        $query = $db->prepare(
+                        "SELECT movie.title, genre.name 
+                        FROM movie 
+                        INNER JOIN movie_genre 
+                        ON movie.id = movie_genre.id_movie
+                        INNER JOIN genre 
+                        ON movie_genre.id_genre = genre.id
+                        WHERE movie.title LIKE '%$search%' OR genre.name LIKE '%$search%'");
                         $query->execute();
                         while($col = $query->fetch()){
                         ?>
                         <tr>
-                            <td><?PHP echo $col['title']?></td>                     
+                            <td><?PHP print $col['title']?></td>  
+                            <td><?php print $col['genre']?></td>
                         </tr>
                         <?php
                         }
