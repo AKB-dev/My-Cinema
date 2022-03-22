@@ -1,8 +1,13 @@
 <?php
-$dbhost = 'us-cdbr-east-05.cleardb.net';
-$dbname = 'heroku_e68502f83c75ed5';
-$username = 'be68da4fdd55d7';
-$password = '9883dd4b';
+$dbhost = 'localhost';
+$dbname = 'cinema';
+$username = 'root';
+$password = '';
+
+// $dbhost = 'us-cdbr-east-05.cleardb.net';
+// $dbname = 'heroku_e68502f83c75ed5';
+// $username = 'be68da4fdd55d7';
+// $password = '9883dd4b';
 ?>
 
 
