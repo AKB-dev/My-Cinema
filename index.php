@@ -11,7 +11,8 @@ require ('include/database.php') ?>
             <form action="index.php" method="POST">
                 <div class="row">
                 <div class="input-field col s9">
-                    <input type="text" name="search" class="validate" placeholder="Search By Title, Genre or Distributor"/>
+                    <input type="text" name="search"/>
+                    <label for="search">Search By Title, Genre or Distributor</label>
                 </div>
                     <div class="input-field col s3">
                         <select class="browser-default" name="filter" id="">
@@ -44,19 +45,6 @@ require ('include/database.php') ?>
                         $name = $_POST['search'];
                     }
 
-                    
-                    
-                
-/*                 if($select === 'genre') {
-                    $genre = $_POST['search'];
-
-                }else if($select === 'distributor') {
-                    $dist = $_POST['search'];
-
-                }else if ($select === 'name') {
-                    $name = $_POST['search'];
-
-                } */
                 
             ?>
             <table class="highlight">
@@ -71,15 +59,6 @@ require ('include/database.php') ?>
                 </thead>
                 <tbody>
                     <?php 
-                        // $requete = <<<END
-                        // SELECT movie.title, genre.name 
-                        // FROM movie 
-                        // INNER JOIN movie_genre 
-                        // ON movie.id = movie_genre.id_movie
-                        // INNER JOIN genre 
-                        // ON movie_genre.id_genre = genre.id
-                        // WHERE movie.title LIKE '%$search%' OR genre.name LIKE '%$search%' LIMIT 10
-                        // END;
                         if(isset($name)){
                             $query = $db->prepare(
                                 "SELECT movie.title, movie.director, movie.duration, DATE (release_date) AS 'date', movie.rating, genre.name, distributor.name
