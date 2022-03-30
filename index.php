@@ -1,9 +1,7 @@
-<?php 
-
-require ('include/database.php') ?>
+<?php require ('include/database.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include('include/header.php')?>
+<?php include('include/header.php')?>
 <div class="main">
     <div class="container" id="container">
         <div id="search">

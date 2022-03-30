@@ -18,6 +18,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">MOVIES</a></li>
                         <li><a href="members.php">MEMBERS</a></li>
+                        <li><a href="/Schedule.php">SCHEADULE</a></li>
                     </ul>
                 </div>
             </nav>
