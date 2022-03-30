@@ -27,14 +27,16 @@
                     <tr>
                         <th>FIRST NAME</th>
                         <th>LAST NAME</th>
-                        <th>EMAIL</th>  
+                        <th>EMAIL</th>
+                        <th>CITY</th>
+                        <th>COUNTRY</th>  
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                 if(isset($name)){
                     $query = $db ->prepare(
-                        "SELECT firstname, lastname, email 
+                        "SELECT * 
                         FROM user
                         WHERE firstname LIKE '%$name%' OR lastname LIKE '%$name%'"
                     );
@@ -46,24 +48,16 @@
                             <td><?PHP print $col['firstname']?></td>  
                             <td><?php print $col['lastname']?></td>
                             <td><?php print $col['email']?></td>
-                            <td><button data-target="modal1" type="submit" name="plusInfo" class="tiny material-icons btn-floating modal-trigger">add</button></td>
+                            <td><?php print $col['city']?></td>
+                            <td><?php print $col['country']?></td>
                         </tr>
                     <?php
                     }
                     ?>
                 </tbody>
             </table>
-            <?php
-            $plusBtn = $_POST['plusInfo'];
-            if(isset($plusBtn)) {
-            ?>
-
-            <?php
-            }
-            ?>
         <?php
         }
         ?>
-    
 </div>
-</html>
+</html> 
